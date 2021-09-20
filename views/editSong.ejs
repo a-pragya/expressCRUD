@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Song</title>
+</head>
+
+<body>
+    <h1>Let's update a song!</h1>
+    <form action="/songs/<%=song.id%>?_method=PATCH" method="POST">
+        <label for="name">Enter song name</label>
+        <input type="text" name="name" id="name" value="<%=song.name%>">
+        <br>
+        <label for="musician">Enter Musician</label>
+        <input type="text" name="musician" id="musician" value="<%=song.musician%>">
+        <br>
+        <label for="likes">Enter number of likes</label>
+        <input type="number" name="likes" id="likes" value="<%=song.likes%>">
+        <br>
+        <button>Update</button>
+    </form>
+
+</body>
+
+</html>

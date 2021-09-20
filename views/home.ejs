@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Songs Home</title>
+</head>
+
+<body>
+    <h1>Welcome to Songs</h1>
+    <ol>
+        <% for(song of songsData){ %>
+            <li>
+                Name: <%=song.name%>
+                    <br>
+                    Musician: <%=song.musician%>
+                        <br>
+                        ID: <%=song.id%>
+                            <br>
+                            Likes: <%=song.likes%>
+                                <br>
+                                <a href="/songs/<%=song.id%>">View Details</a>
+                                <a href="/songs/edit/<%=song.id%>">Edit</a>
+                                <form action="/songs/<%=song.id%>?_method=DELETE" method="POST">
+                                    <button>Delete</button>
+                                </form>
+
+                                <br>
+                                <br>
+            </li>
+            <% } %>
+    </ol>
+    <h2>
+        <a href="/songs/new">Add new song</a>
+    </h2>
+</body>
+
+</html>
